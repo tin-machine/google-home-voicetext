@@ -19,7 +19,13 @@ if (process.env["WIRELESS_IP"]) {
   });
 }
 
-const FILE_SERVER_PORT = "8888";
+let FILE_SERVER_PORT;
+if (process.env["FILE_SERVER_PORT"]) {
+  FILE_SERVER_PORT = process.env["FILE_SERVER_PORT"];
+} else {
+  FILE_SERVER_PORT = "8888";
+}
+
 const VOICETEXT_API_KEY = process.env["VOICETEXT_API_KEY"];
 const VOICETEXT_SPEAKER = process.env["VOICETEXT_SPEAKER"];
 
